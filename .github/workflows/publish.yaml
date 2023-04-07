@@ -23,12 +23,12 @@ jobs:
         run: |
           TAG=$(cat VERSION)
           echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-          docker pull kubeovn/kube-ovn:$TAG-x86
-          docker pull kubeovn/kube-ovn:$TAG-arm
-          docker manifest create kubeovn/kube-ovn:$TAG kubeovn/kube-ovn:$TAG-x86 kubeovn/kube-ovn:$TAG-arm
-          docker manifest push kubeovn/kube-ovn:$TAG
+          docker pull jeffyhub/kube-ovn:$TAG-x86
+          docker pull jeffyhub/kube-ovn:$TAG-arm
+          docker manifest create jeffyhub/kube-ovn:$TAG jeffyhub/kube-ovn:$TAG-x86 jeffyhub/kube-ovn:$TAG-arm
+          docker manifest push jeffyhub/kube-ovn:$TAG
 
-          docker pull kubeovn/vpc-nat-gateway:$TAG-x86
-          docker pull kubeovn/vpc-nat-gateway:$TAG-arm
-          docker manifest create kubeovn/vpc-nat-gateway:$TAG kubeovn/vpc-nat-gateway:$TAG-x86 kubeovn/vpc-nat-gateway:$TAG-arm
-          docker manifest push kubeovn/vpc-nat-gateway:$TAG
+          docker pull jeffyhub/vpc-nat-gateway:$TAG-x86
+          docker pull jeffyhub/vpc-nat-gateway:$TAG-arm
+          docker manifest create jeffyhub/vpc-nat-gateway:$TAG jeffyhub/vpc-nat-gateway:$TAG-x86 jeffyhub/vpc-nat-gateway:$TAG-arm
+          docker manifest push jeffyhub/vpc-nat-gateway:$TAG

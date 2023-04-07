@@ -24,4 +24,4 @@ jobs:
           COMMIT: ${{ github.sha }}
         run: |
           echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-          docker push kubeovn/test:$(cat VERSION)
+          docker push jeffyhub/test:$(cat VERSION)

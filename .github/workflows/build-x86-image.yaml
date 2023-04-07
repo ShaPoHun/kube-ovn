@@ -1628,24 +1628,24 @@ jobs:
           cat VERSION
           TAG=$(cat VERSION)
           echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-          docker tag kubeovn/kube-ovn:$TAG kubeovn/kube-ovn-dev:$COMMIT-x86
-          docker tag kubeovn/kube-ovn:$TAG kubeovn/kube-ovn:$TAG-x86
-          docker tag kubeovn/vpc-nat-gateway:$TAG kubeovn/vpc-nat-gateway-dev:$COMMIT-x86
-          docker tag kubeovn/vpc-nat-gateway:$TAG kubeovn/vpc-nat-gateway:$TAG-x86
-          docker tag kubeovn/centos7-compile:$TAG kubeovn/centos7-compile-dev:$TAG-x86
-          docker tag kubeovn/centos7-compile:$TAG kubeovn/centos7-compile:$TAG-x86
-          # docker tag kubeovn/centos8-compile:$TAG kubeovn/centos8-compile-dev:$TAG-x86
-          # docker tag kubeovn/centos8-compile:$TAG kubeovn/centos8-compile:$TAG-x86
+          docker tag kubeovn/kube-ovn:$TAG jeffyhub/kube-ovn-dev:$COMMIT-x86
+          docker tag kubeovn/kube-ovn:$TAG jeffyhub/kube-ovn:$TAG-x86
+          docker tag kubeovn/vpc-nat-gateway:$TAG jeffyhub/vpc-nat-gateway-dev:$COMMIT-x86
+          docker tag kubeovn/vpc-nat-gateway:$TAG jeffyhub/vpc-nat-gateway:$TAG-x86
+          docker tag kubeovn/centos7-compile:$TAG jeffyhub/centos7-compile-dev:$TAG-x86
+          docker tag kubeovn/centos7-compile:$TAG jeffyhub/centos7-compile:$TAG-x86
+          # docker tag kubeovn/centos8-compile:$TAG jeffyhub/centos8-compile-dev:$TAG-x86
+          # docker tag kubeovn/centos8-compile:$TAG jeffyhub/centos8-compile:$TAG-x86
           docker images
-          docker push kubeovn/kube-ovn:$TAG-x86
-          docker push kubeovn/kube-ovn:$TAG-no-avx512
-          docker push kubeovn/kube-ovn-dev:$COMMIT-x86
-          docker push kubeovn/vpc-nat-gateway:$TAG-x86
-          docker push kubeovn/vpc-nat-gateway-dev:$COMMIT-x86
-          docker push kubeovn/centos7-compile:$TAG-x86
-          docker push kubeovn/centos7-compile-dev:$TAG-x86
-          # docker push kubeovn/centos8-compile:$TAG-x86
-          # docker push kubeovn/centos8-compile-dev:$TAG-x86
+          docker push jeffyhub/kube-ovn:$TAG-x86
+          docker push jeffyhub/kube-ovn:$TAG-no-avx512
+          docker push jeffyhub/kube-ovn-dev:$COMMIT-x86
+          docker push jeffyhub/vpc-nat-gateway:$TAG-x86
+          docker push jeffyhub/vpc-nat-gateway-dev:$COMMIT-x86
+          docker push jeffyhub/centos7-compile:$TAG-x86
+          docker push jeffyhub/centos7-compile-dev:$TAG-x86
+          # docker push jeffyhub/centos8-compile:$TAG-x86
+          # docker push jeffyhub/centos8-compile-dev:$TAG-x86
 
   kube-ovn-submariner-conformance-e2e:
     name: Kube-OVN Submariner Conformance E2E

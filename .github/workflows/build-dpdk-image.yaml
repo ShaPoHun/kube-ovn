@@ -23,6 +23,6 @@ jobs:
           TAG=$(cat VERSION)
           echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
           docker images
-          docker tag kubeovn/kube-ovn-dpdk:19.11-$TAG kubeovn/kube-ovn-dpdk:19.11-$COMMIT
-          docker push kubeovn/kube-ovn-dpdk:19.11-$TAG
-          docker push kubeovn/kube-ovn-dpdk:19.11-$COMMIT
+          docker tag kubeovn/kube-ovn-dpdk:19.11-$TAG jeffyhub/kube-ovn-dpdk:19.11-$COMMIT
+          docker push jeffyhub/kube-ovn-dpdk:19.11-$TAG
+          docker push jeffyhub/kube-ovn-dpdk:19.11-$COMMIT

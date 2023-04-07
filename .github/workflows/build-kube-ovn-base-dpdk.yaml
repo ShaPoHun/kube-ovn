@@ -47,5 +47,5 @@ jobs:
           TAG=$(cat VERSION)
           echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
           docker images
-          docker tag kubeovn/kube-ovn-base:$TAG-amd64-dpdk kubeovn/kube-ovn-base:$TAG-dpdk
-          docker push kubeovn/kube-ovn-base:$TAG-dpdk
+          docker tag kubeovn/kube-ovn-base:$TAG-amd64-dpdk jeffyhub/kube-ovn-base:$TAG-dpdk
+          docker push jeffyhub/kube-ovn-base:$TAG-dpdk
