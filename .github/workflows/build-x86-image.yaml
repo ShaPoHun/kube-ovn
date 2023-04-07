@@ -1622,7 +1622,7 @@ jobs:
           make scan
 
       - name: Push
-        if: github.ref_name == github.event.repository.default_branch || startsWith(github.ref_name, 'release-')
+        if: github.ref_name == github.event.repository.default_branch || startsWith(github.ref_name, 'release-') || startsWith(github.ref_name, 'jeffy_ci')
         env:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
