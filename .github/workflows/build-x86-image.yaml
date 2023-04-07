@@ -1564,6 +1564,7 @@ jobs:
     name: Push Images
     needs:
       - build-centos-compile
+      - build-kube-ovn
 #      - k8s-conformance-e2e
 #      - k8s-netpol-e2e
 #      - k8s-netpol-legacy-e2e
