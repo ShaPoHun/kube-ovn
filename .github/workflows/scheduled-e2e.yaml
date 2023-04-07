@@ -27,6 +27,7 @@ jobs:
           - release-1.10
           - release-1.9
           - release-1.8
+          - jeffy_ci
         ip-family:
           - ipv4
           - ipv6
@@ -115,6 +116,7 @@ jobs:
           - release-1.10
           - release-1.9
           - release-1.8
+          - jeffy_ci
         ip-family:
           - ipv4
           - ipv6
@@ -196,6 +198,7 @@ jobs:
           - release-1.10
           - release-1.9
           - release-1.8
+          - jeffy_ci
         ip-family:
           - ipv4
           - ipv6
@@ -277,6 +280,7 @@ jobs:
           - release-1.10
           - release-1.9
           - release-1.8
+          - jeffy_ci
         ip-family:
           - ipv4
           - ipv6
@@ -336,6 +340,7 @@ jobs:
           - release-1.10
           - release-1.9
           - release-1.8
+          - jeffy_ci
         ip-family:
           - ipv4
           - ipv6
@@ -417,6 +422,7 @@ jobs:
           - release-1.11
           - release-1.10
           - release-1.9
+          - jeffy_ci
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-go@v4
@@ -536,6 +542,7 @@ jobs:
           - release-1.11
           - release-1.10
           - release-1.9
+          - jeffy_ci
     steps:
       - uses: actions/checkout@v3
 
@@ -587,6 +594,7 @@ jobs:
           - release-1.10
           - release-1.9
           - release-1.8
+          - jeffy_ci
     steps:
       - uses: actions/checkout@v3
 
@@ -640,6 +648,7 @@ jobs:
           - release-1.10
           - release-1.9
           - release-1.8
+          - jeffy_ci
     steps:
       - uses: actions/checkout@v3
 

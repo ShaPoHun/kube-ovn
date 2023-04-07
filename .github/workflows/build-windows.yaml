@@ -6,12 +6,14 @@ on:
   pull_request:
     branches:
     - master
+    - jeffy_ci
     paths-ignore:
     - 'docs/**'
     - '**.md'
   push:
     branches:
     - master
+    - jeffy_ci
     - release-*
     paths-ignore:
     - 'docs/**'

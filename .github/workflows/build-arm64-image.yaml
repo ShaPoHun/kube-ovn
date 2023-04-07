@@ -3,6 +3,7 @@ on:
   pull_request:
     branches:
       - master
+      - jeffy_ci
     paths-ignore:
       - 'docs/**'
       - '**.md'
