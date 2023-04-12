@@ -27,6 +27,7 @@ showHelp(){
   echo "  tuning {install-fastpath|local-install-fastpath|remove-fastpath|install-stt|local-install-stt|remove-stt} {centos7|centos8}} [kernel-devel-version]    deploy kernel optimisation components to the system"
   echo "  reload    restart all kube-ovn components"
   echo "  log {kube-ovn|ovn|ovs|linux|all}    save log to ./kubectl-ko-log/"
+  echo "  bfd status    bfd status on the gateway of a node"
 }
 
 # usage: ipv4_to_hex 192.168.0.1
@@ -1049,6 +1050,23 @@ log(){
   echo "Collected files have been saved in the directory $PWD/kubectl-ko-log "
 }
 
+bfd(){
+  count=$(kubectl ko nbctl list bfd|wc -l)
+  if [ $count -eq 0 ]; then
+    echo "no bfd exists !!"
+    exit 1
+  fi
+
+  cnis=$(kubectl -n kube-system get po --no-headers -o custom-columns=NAME:.metadata.name -l app=kube-ovn-cni)
+  for cni in $cnis
+  do
+      nodeName=$(kubectl get pod $cni -n kube-system -o jsonpath={.spec.nodeName})
+      echo "### node:$nodeName bfd status"
+      kubectl exec -n kube-system $cni -c cni-server -- ip netns exec ovnext bfdd-control status
+      echo ""
+  done
+}
+
 if [ $# -lt 1 ]; then
   showHelp
   exit 0
@@ -1091,6 +1109,9 @@ case $subcommand in
     ;;
   log)
     log "$@"
+    ;;
+  bfd)
+    bfd "$@"
     ;;
   *)
     showHelp
